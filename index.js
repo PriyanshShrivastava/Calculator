@@ -2,7 +2,13 @@ const inputtext = document.getElementById("input-text");
 
 const outputText = document.getElementById("show-output");
 
+let resultFlag = false; 
+
 function btnClick(btnClicked) {
+  if(resultFlag){
+    inputtext.value="";
+    resultFlag = false;
+  }
   inputtext.value += btnClicked;
 }
 
@@ -17,6 +23,8 @@ function equals() {
       <span style="float:right"> ${ans} </span>
     </div>
       `;
+      inputtext.value=`${ans}`;
+      resultFlag = true;
 }
 
 function clean(){
